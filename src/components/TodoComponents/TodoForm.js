@@ -14,6 +14,7 @@ function TodoForm(props) {
         <form>
             <input type="text" name="list" value={props.value} onChange={props.inputChangeHandler} placeholder="ENTER ITEM"/>
             <button>Add Todo</button>
+            <button>Clear Completed</button>
         </form>
        </div>
     );
