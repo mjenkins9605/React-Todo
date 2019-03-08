@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+.App {
+    margin: 0 auto;
+    border: 2px solid #979797;
+    width: 450px;
+    height: 600px;
+    background-image: url("yellowpaper.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 450px 600px;
+    font-family: 'Indie Flower', regular;
+}
+
+h1 {
+    padding-left: 40px;
+    padding-top: 30px;
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+}
+form > input {
+    padding: 10px 0;
+}
+
+.addButton {
+    margin: 10px 40px;
+    background-color: #6ed66e;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.todo-list {
+    padding-left: 40px;
+    font-size: 24px;
+}
+
+.clearButton {
+    text-align: center;
+    margin-left: 144px;
+    background-color: #f04848;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.item.completed {
+    text-decoration: line-through;
+}

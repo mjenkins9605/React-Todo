@@ -6,14 +6,15 @@
 import React from 'react';
 import Todo from './Todo';
 
-function TodoList(props) {
+const TodoList = props => {
+    const sortedList = props.todos.sort((a, b) => a.completed - b.completed);
     return (
-        <div className listArray>
-            <Todo />
+        <div className="todo-list">
+            {sortedList.map(item => (
+                <Todo key={item.id} item={item} toggleItem={props.toggleItem} />
+            ))}
         </div>
     );
-}
-
-
+};
 
 export default TodoList;

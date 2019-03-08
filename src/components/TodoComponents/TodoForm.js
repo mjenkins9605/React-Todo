@@ -4,20 +4,36 @@
 
 import React from 'react';
 
-function inputChangeHandler(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  };
+class TodoForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            itemText: ''
+        };
+    }
 
-function TodoForm(props) {
-    return (
-       <div className="inputForm">  
-        <form>
-            <input type="text" name="list" value={props.value} onChange={props.inputChangeHandler} placeholder="ENTER ITEM"/>
-            <button>Add Todo</button>
-            <button>Clear Completed</button>
-        </form>
-       </div>
-    );
+    handleChanges = event => {
+        this.setState({ [event.target.name]: event.target.value });
+    };
+
+    submitItem = event => {
+        this.setState({ itemText: '' });
+        this.props.addItem(event, this.state.itemText);
+    };
+
+    render() {
+        return (
+            <form onSubmit={this.submitItem}>
+                <input
+                    type="text"
+                    value={this.state.itemText}
+                    name="itemText"
+                    onChange={this.handleChanges}
+                />
+                <button className="addButton">Add Todo</button>
+            </form>
+        );
+    }
 }
 
 export default TodoForm;
